@@ -1,0 +1,228 @@
+.career-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 5vw, 72px);
+  margin-top: 44px;
+  isolation: isolate;
+}
+.career-timeline__axis {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, #d2ff3790, #d2ff37b0 50%, #73d8ba60);
+  z-index: -1;
+}
+.career-timeline__axis::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid #94b958;
+  border-right: 1px solid #94b958;
+  transform: rotate(45deg);
+}
+.career-timeline__year { min-width: 0; }
+.career-timeline__node {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #d2ff3760;
+  border-radius: 50%;
+  background: #071619;
+  box-shadow: 0 0 22px #d2ff3720;
+}
+.career-timeline__node span {
+  width: 7px;
+  height: 7px;
+  background: var(--accent, #d2ff37);
+  border-radius: 50%;
+  box-shadow: 0 0 12px #d2ff3770;
+}
+.career-timeline__year-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 24px 0 27px;
+}
+.career-timeline__year-header h3 {
+  margin: 0;
+  font-size: clamp(36px, 4.3vw, 62px);
+  font-weight: 500;
+  letter-spacing: -.055em;
+  line-height: 1;
+  color: #f3f4ed;
+}
+.career-timeline__year-header > span {
+  font-size: 10px;
+  letter-spacing: .13em;
+  color: #9daea7;
+}
+.career-timeline__stack {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.career-timeline__card {
+  display: block;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #75978330;
+  border-radius: 22px;
+  background: linear-gradient(150deg, #1b2a2dce, #0c161bd9);
+  box-shadow: 0 16px 40px #00000020;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  overflow: hidden;
+}
+.career-timeline__card:hover {
+  transform: translateY(-5px);
+  border-color: #d2ff3770;
+  box-shadow: 0 22px 50px #00000038;
+}
+.career-timeline__art {
+  position: relative;
+  height: 178px;
+  border-radius: 13px;
+  overflow: hidden;
+  background: #14292b;
+}
+.career-timeline__art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, #05101738, transparent 40%, #07131aa0);
+}
+.career-timeline__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  opacity: .84;
+  transition: transform .6s ease, opacity .6s ease;
+}
+.career-timeline__card:hover img { transform: scale(1.045); opacity: 1; }
+.career-timeline__art--moon {
+  isolation: isolate;
+  background: #10232e;
+}
+.career-timeline__art--moon img {
+  object-position: 64% 50%;
+  opacity: .95;
+}
+.career-timeline__art--moon::after {
+  background: linear-gradient(90deg, #061820ac, #06182038 42%, transparent 75%),
+    linear-gradient(0deg, #06182085, transparent 60%);
+}
+.career-timeline__moon-label {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  z-index: 1;
+  color: #fff4db;
+  font: 600 13px/1.45 ui-monospace, monospace;
+  letter-spacing: .13em;
+  text-shadow: 0 2px 12px #061820;
+}
+.career-timeline__index {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  padding: 6px 9px;
+  border: 1px solid #ffffff25;
+  border-radius: 5px;
+  background: #08171c90;
+  color: #e7f1d9;
+  font: 10px ui-monospace, monospace;
+  letter-spacing: .1em;
+}
+.career-timeline__arrow {
+  position: absolute;
+  bottom: 13px;
+  right: 13px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid #d2ff3770;
+  border-radius: 50%;
+  color: #d2ff37;
+  background: #091519a0;
+  font-size: 20px;
+}
+.career-timeline__copy { padding: 21px 18px 17px; }
+.career-timeline__period {
+  display: block;
+  margin-bottom: 13px;
+  color: #9fb7ac;
+  font: 10px ui-monospace, monospace;
+  letter-spacing: .07em;
+  line-height: 1.6;
+}
+.career-timeline__copy h4 {
+  margin: 0 0 12px;
+  color: #f3f5ef;
+  font-size: clamp(20px, 2.2vw, 27px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+.career-timeline__place {
+  display: block;
+  color: #d2ff37;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.career-timeline__copy p {
+  margin: 17px 0 21px;
+  color: #a4b7bf;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.career-timeline__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.career-timeline__tags span {
+  padding: 5px 8px;
+  border: 1px solid #9dc5b120;
+  border-radius: 5px;
+  font: 10px ui-monospace, monospace;
+  color: #9cb0ae;
+  background: #23383945;
+}
+.career-timeline--compact .career-timeline__art { height: 140px; }
+.career-timeline--compact .career-timeline__copy { padding: 19px 17px 14px; }
+.career-timeline--compact .career-timeline__copy h4 { font-size: 23px; }
+@media (max-width: 760px) {
+  .career-timeline { gap: 15px; margin-top: 34px; }
+  .career-timeline__year-header { display: block; margin: 19px 0 20px; }
+  .career-timeline__year-header h3 { font-size: 40px; }
+  .career-timeline__year-header > span { display: block; margin-top: 12px; font-size: 9px; }
+  .career-timeline__stack { gap: 16px; }
+  .career-timeline__card { padding: 6px; border-radius: 15px; }
+  .career-timeline__art, .career-timeline--compact .career-timeline__art { height: 115px; border-radius: 9px; }
+  .career-timeline__art--moon img { object-position: 74% 50%; }
+  .career-timeline__moon-label { left: 10px; bottom: 12px; font-size: 8px; }
+  .career-timeline__index { left: 8px; top: 8px; padding: 4px 6px; font-size: 8px; }
+  .career-timeline__arrow { width: 25px; height: 25px; right: 8px; bottom: 8px; font-size: 17px; }
+  .career-timeline__copy, .career-timeline--compact .career-timeline__copy { padding: 14px 9px 11px; }
+  .career-timeline__copy h4, .career-timeline--compact .career-timeline__copy h4 { font-size: 17px; line-height: 1.45; }
+  .career-timeline__period { font-size: 9px; letter-spacing: 0; margin-bottom: 10px; }
+  .career-timeline__place { font-size: 10px; }
+  .career-timeline__copy p { font-size: 11px; line-height: 1.8; margin: 14px 0; }
+  .career-timeline__tags span { font-size: 8px; padding: 4px 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .career-timeline__card, .career-timeline__art img { transition: none; }
+  .career-timeline__card:hover, .career-timeline__card:hover img { transform: none; }
+}
