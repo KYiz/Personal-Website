@@ -2,6 +2,8 @@
 
 A bilingual React + TypeScript + Vite portfolio with Tailwind CSS, responsive layouts and five detailed case studies. It is a static website: no backend, database or AI service is required.
 
+**Live website:** [https://kyiz.github.io/Personal-Website/](https://kyiz.github.io/Personal-Website/)
+
 ## Run locally
 
 Requires Node.js 22 or later and npm.
